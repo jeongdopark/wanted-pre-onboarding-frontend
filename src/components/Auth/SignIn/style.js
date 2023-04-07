@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { CommonContainer } from '../../style/commonContainer'
+import { CommonContainer } from '../../../style/commonContainer'
 
 const Container = styled(CommonContainer)``
 const InputContainer = styled.div`
