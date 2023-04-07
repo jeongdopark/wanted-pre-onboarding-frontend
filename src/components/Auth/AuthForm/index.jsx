@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { S } from './style'
-import { useNavigate } from 'react-router'
 import { useInput } from '../../../hook/useInput'
+import AuthButton from '../AuthButton'
 // 회원가입 form
-const SignUpForm = () => {
-  const navigate = useNavigate()
+const AuthForm = ({ type }) => {
   const [emailMessage, emailValid, emailCheckValidation] = useInput('email')
   const [passwordMessage, passwordValid, passwordCheckValidation] =
     useInput('password')
   const [buttonAble, setButtonAble] = useState(true)
 
   useEffect(() => {
-    console.log(buttonAble, emailValid.current, passwordValid.current)
     if (emailValid.current === true && passwordValid.current === true) {
       setButtonAble(false)
     } else {
@@ -40,12 +38,9 @@ const SignUpForm = () => {
             : ''}
         </span>
       </S.InputContainer>
-      <button data-testid="signup-button" disabled={buttonAble}>
-        ok
-      </button>
-      <button onClick={() => navigate('/signin')}>로그인으로 이동</button>
+      <AuthButton type={type} buttonAble={buttonAble} />
     </React.Fragment>
   )
 }
 
-export default SignUpForm
+export default AuthForm

@@ -1,12 +1,12 @@
 import React from 'react'
 import { S } from './style'
-import Login from '../../components/Auth/SignIn'
+import AuthForm from '../../components/Auth/AuthForm'
 
 const SignIn = () => {
   return (
     <S.Container>
       <span>Login</span>
-      <Login />
+      <AuthForm type="signin" />
     </S.Container>
   )
 }
