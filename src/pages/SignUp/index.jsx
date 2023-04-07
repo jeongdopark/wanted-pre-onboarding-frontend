@@ -1,7 +1,14 @@
 import React from 'react'
+import { S } from './style'
+import SignUpForm from '../../components/Auth/Signup'
 
 const SignUp = () => {
-  return <div>SignUp</div>
+  return (
+    <S.Container>
+      <span>Sign up</span>
+      <SignUpForm />
+    </S.Container>
+  )
 }
 
 export default SignUp
