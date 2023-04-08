@@ -29,5 +29,5 @@ export const useInput = (type) => {
     [inputValue],
   )
 
-  return [message, valid, checkValidation]
+  return [message, valid, inputValue, checkValidation]
 }
