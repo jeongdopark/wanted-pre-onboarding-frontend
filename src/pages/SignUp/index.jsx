@@ -5,7 +5,7 @@ import AuthForm from '../../components/Auth/AuthForm'
 const SignUp = () => {
   return (
     <S.Container>
-      <span>Sign up</span>
+      <S.Title>Sign up</S.Title>
       <AuthForm type="signup" />
     </S.Container>
   )

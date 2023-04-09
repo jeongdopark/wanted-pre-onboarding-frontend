@@ -10,10 +10,10 @@ const Home = () => {
 
   return (
     <S.Container>
-      <div>로그인 후 이용해 주세요</div>
+      <span>Todo App</span>
       <S.ButtonWrapper>
-        <S.Button onClick={() => onNavigate('signin')}>로그인</S.Button>
-        <S.Button onClick={() => onNavigate('signup')}>회원가입</S.Button>
+        <S.Button onClick={() => onNavigate('signin')}>LOGIN</S.Button>
+        <S.Button onClick={() => onNavigate('signup')}>SIGN UP</S.Button>
       </S.ButtonWrapper>
     </S.Container>
   )

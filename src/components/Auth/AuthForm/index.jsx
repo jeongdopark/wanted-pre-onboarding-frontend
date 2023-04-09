@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { toast } from 'react-toastify'
 import { S } from './style'
 import { useInput } from '../../../hook/useInput'
 import AuthButton from '../AuthButton'
@@ -16,7 +17,6 @@ const AuthForm = ({ type }) => {
     passwordCheckValidation,
   ] = useInput('password')
   const [buttonAble, setButtonAble] = useState(true)
-
   const handleFormSubmit = (e) => {
     e.preventDefault()
 
@@ -25,6 +25,7 @@ const AuthForm = ({ type }) => {
         signInApi(emailValue, passwordValue).then((res) => {
           try {
             localStorage.setItem('token', res.data.access_token)
+            toast('로그인 완료')
             navigate('/todo')
           } catch (error) {
             console.log(error)
@@ -36,6 +37,7 @@ const AuthForm = ({ type }) => {
       case 'signup': // /signup 회원가입 제출 폼
         signUpApi(emailValue, passwordValue).then((res) => {
           try {
+            toast('회원가입 완료')
             navigate('/signin')
           } catch (error) {
             alert('중복되는 이메일이 존재합니다')
@@ -62,21 +64,23 @@ const AuthForm = ({ type }) => {
           data-testid="email-input"
           onChange={emailCheckValidation('email')}
         />
-        <span>
-          {emailMessage.current.value === undefined ? emailMessage.current : ''}
-        </span>
+        <S.WranningText>
+          {emailMessage.current.value !== undefined || emailValue === ''
+            ? ''
+            : emailMessage.current}
+        </S.WranningText>
         <input
-          type="text"
+          type="password"
           name="password"
           placeholder="password"
           data-testid="password-input"
           onChange={passwordCheckValidation('password')}
         />
-        <span>
-          {passwordMessage.current.value === undefined
-            ? passwordMessage.current
-            : ''}
-        </span>
+        <S.WranningText>
+          {passwordMessage.current.value !== undefined || passwordValue === ''
+            ? ''
+            : passwordMessage.current}
+        </S.WranningText>
         <AuthButton
           type={type}
           buttonAble={buttonAble}
