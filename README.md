@@ -9,6 +9,7 @@ https://main--chic-salmiakki-b3e2dd.netlify.app/
 
 <br>
 <br>
+
 # 2. Assignment 구현 GIF
 
 <br>
