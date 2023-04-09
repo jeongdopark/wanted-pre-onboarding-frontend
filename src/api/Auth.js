@@ -22,6 +22,6 @@ export const signUpApi = async (email, password) => {
       })
     return response
   } catch (error) {
-    console.log(error)
+    return error.response.data.statusCode
   }
 }

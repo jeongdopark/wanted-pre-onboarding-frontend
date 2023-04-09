@@ -36,12 +36,16 @@ const AuthForm = ({ type }) => {
 
       case 'signup': // /signup 회원가입 제출 폼
         signUpApi(emailValue, passwordValue).then((res) => {
+          console.log(res)
+          if (res === 400) {
+            alert('중복되는 이메일이 존재합니다')
+            return
+          }
+
           try {
             toast('회원가입 완료')
             navigate('/signin')
-          } catch (error) {
-            alert('중복되는 이메일이 존재합니다')
-          }
+          } catch (error) {}
         })
         break
     }

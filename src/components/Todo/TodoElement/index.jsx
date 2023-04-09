@@ -13,7 +13,8 @@ const TodoListElement = ({ todo }) => {
   }
 
   const handleUpdateCheck = async () => {
-    await updateTodo(todo.id, todo.todo, !todo.isCompleted)
+    const checkedStatus = isChecked
+    await updateTodo(todo.id, todo.todo, !checkedStatus)
     setIsChecked(!isChecked)
   }
 
