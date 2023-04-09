@@ -9,6 +9,11 @@ const TodoInput = () => {
 
   const handleSubmit = useCallback(
     async (e) => {
+      if (todo === '') {
+        alert('내용을 입력해 주세요')
+        e.preventDefault()
+        return
+      }
       e.preventDefault()
       await createTodo(todo)
       setTodo('')
@@ -30,9 +35,9 @@ const TodoInput = () => {
           value={todo}
           onChange={onChangeInput}
         />
-        <button data-testid="new-todo-add-button" type="submit">
+        <S.Button data-testid="new-todo-add-button" type="submit">
           추가
-        </button>
+        </S.Button>
       </S.FormContainer>
     </React.Fragment>
   )
