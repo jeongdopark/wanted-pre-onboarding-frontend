@@ -1,17 +1,17 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import { TodoContext } from '../../../pages/Todo'
 import TodoListElement from '../TodoElement'
-
+import { S } from './style'
 const TodoList = () => {
   const { todoList } = useContext(TodoContext)
   return (
-    <div>
+    <S.Container>
       <ul>
         {todoList.map((todo) => (
           <TodoListElement key={todo.id} todo={todo} />
         ))}
       </ul>
-    </div>
+    </S.Container>
   )
 }
 
