@@ -1,6 +1,7 @@
-import React, { useCallback, useContext } from 'react'
+import React, { useContext } from 'react'
 import { updateTodo, deleteTodo } from '../../../api/Todo'
 import { TodoContext } from '../../../pages/Todo'
+import { S } from './style'
 
 const TodoButton = ({ btnFlag, setBtnFlag, todo, todoValue, setTodoValue }) => {
   const { getTodo } = useContext(TodoContext)
@@ -21,27 +22,27 @@ const TodoButton = ({ btnFlag, setBtnFlag, todo, todoValue, setTodoValue }) => {
   }
 
   return (
-    <React.Fragment>
+    <S.Container>
       {btnFlag === false ? (
         <div>
-          <button data-testid="modify-button" onClick={onClickBtnFlag}>
+          <S.Button data-testid="modify-button" onClick={onClickBtnFlag}>
             수정
-          </button>
-          <button data-testid="delete-button" onClick={handleDelete}>
+          </S.Button>
+          <S.Button data-testid="delete-button" onClick={handleDelete}>
             삭제
-          </button>
+          </S.Button>
         </div>
       ) : (
         <div>
-          <button data-testid="submit-button" onClick={handleUpdateTodo}>
+          <S.Button data-testid="submit-button" onClick={handleUpdateTodo}>
             제출
-          </button>
-          <button data-testid="cancel-button" onClick={onClickBtnFlag}>
+          </S.Button>
+          <S.Button data-testid="cancel-button" onClick={onClickBtnFlag}>
             취소
-          </button>
+          </S.Button>
         </div>
       )}
-    </React.Fragment>
+    </S.Container>
   )
 }
 

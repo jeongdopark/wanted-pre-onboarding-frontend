@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import TodoButton from '../TodoButton'
 import { S } from './style'
 import { updateTodo } from '../../../api/Todo'
