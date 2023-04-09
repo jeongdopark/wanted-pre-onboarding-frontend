@@ -94,3 +94,31 @@ https://main--chic-salmiakki-b3e2dd.netlify.app/
 ### Assignment - 10
 
 - 투두 리스트의 수정 기능을 구현해주세요 ( ✓ )
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+# 3. 프로젝트 설치 및 실행
+
+1. root 경로에 .env 파일 생성
+
+```
+REACT_APP_API_URL = 'https://www.pre-onboarding-selection-task.shop/'
+```
+
+2. 프로젝트 패키지 설치
+
+```
+npm install
+```
+
+3. 프로젝트 실행
+
+```
+npm start
+```
