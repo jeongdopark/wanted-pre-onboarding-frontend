@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router'
 import { DATA_TEST_ID, TEXT_TYPE, NAVIGATE_ID } from './constant'
 
 const AuthButton = ({ type, buttonAble, emailValue, passwordValue }) => {
-  console.log(type, buttonAble, emailValue, passwordValue)
   const navigate = useNavigate()
 
   return (
@@ -18,7 +17,6 @@ const AuthButton = ({ type, buttonAble, emailValue, passwordValue }) => {
       <button
         type="button"
         onClick={() => {
-          console.log('click')
           navigate(`/${NAVIGATE_ID[type]}`)
         }}
       >

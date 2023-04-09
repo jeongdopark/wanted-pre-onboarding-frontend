@@ -5,7 +5,6 @@ export const signInApi = async (email, password) => {
     const response = await instance
       .post('/auth/signin', { email, password })
       .then((res) => {
-        console.log(res)
         return res
       })
     return response
@@ -19,7 +18,6 @@ export const signUpApi = async (email, password) => {
     const response = await instance
       .post('/auth/signup', { email, password })
       .then((res) => {
-        console.log(res)
         return res
       })
     return response

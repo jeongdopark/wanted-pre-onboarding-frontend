@@ -38,10 +38,9 @@ const AuthForm = ({ type }) => {
           try {
             navigate('/signin')
           } catch (error) {
-            console.log('중복되는 이메일이 존재합니다')
+            alert('중복되는 이메일이 존재합니다')
           }
         })
-        console.log('signUp')
         break
     }
   }
@@ -58,7 +57,7 @@ const AuthForm = ({ type }) => {
       <S.FormContainer onSubmit={handleFormSubmit}>
         <input
           type="text"
-          label="email"
+          name="email"
           placeholder="email"
           data-testid="email-input"
           onChange={emailCheckValidation('email')}
@@ -68,7 +67,7 @@ const AuthForm = ({ type }) => {
         </span>
         <input
           type="text"
-          label="password"
+          name="password"
           placeholder="password"
           data-testid="password-input"
           onChange={passwordCheckValidation('password')}
